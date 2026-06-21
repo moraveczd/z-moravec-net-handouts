@@ -39,17 +39,17 @@
 \colorlet{theory}{MidnightBlue}
 
 % makes title
-\makeatletter
-\def\@maketitle{
-  \vspace{0.5cm}
-    {\Huge \bf
-        \begin{flushleft}
-            \@title
-        \end{flushleft}
-    }\vspace{-0.5em}
-    {\large \@author}
-}
-\makeatother
+%\makeatletter
+%\def\@maketitle{
+%  \vspace{0.5cm}
+%    {\Huge \bf
+%        \begin{flushleft}
+%            \@title
+%        \end{flushleft}
+%    }\vspace{-0.5em}
+%    {\large \@author}
+%}
+%\makeatother
 
 % makes header
 \newcommand{\makefinding}[1]{
@@ -78,7 +78,7 @@
       \colorbox{\postertype}{%
         \parbox[c][0.14\paperheight][c]{\paperwidth}{%
           \hspace*{\dimexpr\hoffset+\oddsidemargin+1in\relax}%
-          \begin{minipage}[c][0.14\paperheight][c]{0.15\textwidth}
+          \begin{minipage}[c][0.14\paperheight][c]{0.17\textwidth}
                 \includegraphics[height=0.11\paperheight, left]{#2}
           \end{minipage}
           \begin{minipage}[c][0.14\paperheight][c]{0.3\textwidth}
@@ -130,7 +130,7 @@
     \noindent
     \parbox[t][0.55\paperheight][t]{0.65\linewidth}{%
 
-        {\let\newpage\relax\maketitle}
+%        {\let\newpage\relax\maketitle}
         {\large
             #1
         }
