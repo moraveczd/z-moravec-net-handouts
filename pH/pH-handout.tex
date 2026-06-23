@@ -1,6 +1,7 @@
 % for landscape posters, use "a4paper, landscape"
 \documentclass[a4paper]{article}
 \usepackage{../better_poster}
+\usepackage{mhchem}
 
 
 % ---- fill in from here
@@ -37,52 +38,110 @@
 % the main text of your poster goes here
 \makemain{
     % you can have 1 or 2 columns
-    \raggedcolumns
-    \begin{multicols}{2}
-        \section{Intro}
+    %\raggedcolumns
+    %\begin{multicols}{1}
+
+    \section*{Základní vztahy}
+    \begin{compactitem}
+    	\item Autoprotolýza vody: \ce{H2O + H2O <=> H3O+ + OH-}
+    	\item Iontový součin vody: K$_W$ = [H$^+$][OH$^-$] = 10$^{-14}$
+    	\item Pro vodné roztoky platí: pH + pOH = 14
+    \end{compactitem}
+
+        \section*{pH kyselin}
         \begin{compactitem}
-            \item Just give some context
-            \item No need to cite papers
-            \item because people can download your paper
+            \item Silná jednosytná kyselina (HCl): $\textrm{pH = }-\log \textrm{c}_{kys}$
+            \item Silná dvojsytná kyselina (\ce{H2SO4}): $\textrm{pH = }-\log (2\times \textrm{c}_{kys})$
+            \item Slabá kyselina (HF): $\textrm{pH = }\frac{1}{2}(\textrm{p}K_A - \log \textrm{c}_{kys})$
         \end{compactitem}
 
-        \section{Methods}
-        \begin{compactitem}
-            \item N = 30
-            \item Some math: $w_1 = \epsilon$
-            \item Collected this
-            \item Tested with X statistical test
-        \end{compactitem}
+\section*{pH zásad}
+\begin{compactitem}
+	\item Silná jednosytná zásada (NaOH): $\textrm{pH = }14 + \log \textrm{c}_{zas}$
+	\item Silná dvojsytná zásada (\ce{Ba(OH)2}): $\textrm{pH = }14 + \log (2\times \textrm{c}_{zas})$
+	\item Slabá zásada (\ce{NH3}): $\textrm{pH = 14 } - \frac{1}{2}(\textrm{p}K_B - \log \textrm{c}_{zas})$
+\end{compactitem}
+
+\section*{pH solí}
+\begin{compactitem}
+	\item Soli silné zásady a silné kyseliny (NaCl): \emph{disociací neovlivňují pH}
+	\item Soli silné kyseliny a slabé zásady (\ce{NH4Cl}): $\textrm{pH} = 7 - \frac{1}{2}(pK_a + \log c)$
+	\item Soli slabé kyseliny a silné zásady (\ce{NaF}): $\textrm{pH} = 7 + \frac{1}{2}(pK_b + \log c)$
+	\item Soli slabé kyseliny a slabé zásady (\ce{NH4F}): $\textrm{pH} = 7 + \frac{1}{2}(pK_a - pK_b)$
+	\begin{compactitem}
+		\item pH solí slabých kyseliny a slabých zásad není závislé na koncentraci soli.
+	\end{compactitem}
+\end{compactitem}
+
+\section*{pH pufrů}
+\begin{compactitem}
+	\item Slabá kyselina a její sůl: $\textrm{pH} = pK_a + \log\frac{[A^-]}{[HA]}$
+	\item Slabá zásada a její sůl: $\textrm{pH} = 14 - pK_b + \log\frac{[B^+]}{[BH]}$
+\end{compactitem}
 
     % this determines where your columns will be separated
-    \columnbreak
+    %\columnbreak
 
-        \section{Results}
 
-        \begin{compactitem}
-            \item Your
-            \item Talking
-            \item Points
-        \end{compactitem}
-
-    \end{multicols}
+    %\end{multicols}
 }
 % If you have extra figures or data to show
 \makeextracolumn{
-    Add your things here
+    \textbf{Kyselina}
+    \begin{compactitem}
+        \item Látka, která uvolňuje protony, např. HCl nebo \ce{H2SO4}
+    \end{compactitem}
 
+	\textbf{Zásada}
+	\begin{compactitem}
+		\item Látka, která přijímá protony, např. NaOH
+	\end{compactitem}
 
-    \begin{itemize}
-    \setlength\itemsep{0.1em}
-        \item Stuff you don't want to forget
-        \item But is not essential
-    \end{itemize}
+	\textbf{Silná kyselina/zásada}
+	\begin{compactitem}
+		\item Je v roztoku zcela disociovaná
+	\end{compactitem}
+
+	\textbf{Slabá kyselina/zásada}
+	\begin{compactitem}
+		\item Je v roztoku disociovaná pouze z části
+	\end{compactitem}
+
+	\textbf{Jednosytná kyselina}
+	\begin{compactitem}
+		\item Při disociaci uvolňuje jeden proton:
+		\item \ce{HCl -> H+ + Cl-}
+	\end{compactitem}
+
+	\textbf{Dvojsytná kyselina}
+	\begin{compactitem}
+		\item Při disociaci uvolňuje dva protony:
+		\item \ce{H2SO4 -> 2 H+ + SO$^{2-}_4$}
+	\end{compactitem}
+
+	\textbf{Sůl}
+	\begin{compactitem}
+		\item Produkt neutralizace, např. NaCl
+	\end{compactitem}
+
+	\textbf{Neutralizace}
+	\begin{compactitem}
+		\item Reakce kyseliny se zásadou, např.:
+		\item \ce{HCl + NaOH -> NaCl + H2O}
+	\end{compactitem}
+
+	\textbf{Pufr}
+	\begin{compactitem}
+		\item Roztok používaný pro stabilizaci pH, je tvořen slabou kyselinou nebo zásadou a její solí
+		\item Acetátový pufr: směs kyseliny octové a octanu sodného
+		\item Fosfátový pufr: směs dihydrogenfosforečnanu sodného a hydrogenfosforečnanu sodného
+	\end{compactitem}
 }
 
 % footer
 % generate qr code from https://www.qr-code-generator.com/ and replace qr_code.png
 % default: barcode on the left
-\makefooter{img/m.jpg}{img/qr-pH.png}
+\makefooter{cc.png}{img/qr-pH.png}
 
 % replace with this like for barcode on the right
 %\makealtfooter{images/uni_logo.png}{images/qr-code.png}
