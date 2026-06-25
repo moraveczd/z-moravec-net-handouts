@@ -2,7 +2,7 @@
 \documentclass[a4paper]{article}
 \usepackage{../better_poster}
 \usepackage{mhchem}
-
+\usepackage{adjustbox}
 
 % ---- fill in from here
 % poster size - this will scale the poster to the given size.
@@ -48,18 +48,26 @@
     	\item Pro vodné roztoky platí: pH + pOH = 14
     \end{compactitem}
 
+    \section*{Stupnice pH}
+
+    \begin{compactitem}
+    	\item 0--7 kyselé prostředí
+    	\item 7 neutrální prostředí
+    	\item 7--14 zásadité prostředí
+    \end{compactitem}
+
         \section*{pH kyselin}
         \begin{compactitem}
             \item Silná jednosytná kyselina (HCl): $\textrm{pH = }-\log \textrm{c}_{kys}$
             \item Silná dvojsytná kyselina (\ce{H2SO4}): $\textrm{pH = }-\log (2\times \textrm{c}_{kys})$
-            \item Slabá kyselina (HF): $\textrm{pH = }\frac{1}{2}(\textrm{p}K_A - \log \textrm{c}_{kys})$
+            \item Slabá kyselina (HF): $\textrm{pH = }\frac{1}{2}(\textrm{p}K_a - \log \textrm{c}_{kys})$
         \end{compactitem}
 
 \section*{pH zásad}
 \begin{compactitem}
 	\item Silná jednosytná zásada (NaOH): $\textrm{pH = }14 + \log \textrm{c}_{zas}$
 	\item Silná dvojsytná zásada (\ce{Ba(OH)2}): $\textrm{pH = }14 + \log (2\times \textrm{c}_{zas})$
-	\item Slabá zásada (\ce{NH3}): $\textrm{pH = 14 } - \frac{1}{2}(\textrm{p}K_B - \log \textrm{c}_{zas})$
+	\item Slabá zásada (\ce{NH3}): $\textrm{pH = 14 } - \frac{1}{2}(\textrm{p}K_b - \log \textrm{c}_{zas})$
 \end{compactitem}
 
 \section*{pH solí}
@@ -76,7 +84,7 @@
 \section*{pH pufrů}
 \begin{compactitem}
 	\item Slabá kyselina a její sůl: $\textrm{pH} = pK_a + \log\frac{[A^-]}{[HA]}$
-	\item Slabá zásada a její sůl: $\textrm{pH} = 14 - pK_b + \log\frac{[B^+]}{[BH]}$
+	\item Slabá zásada a její sůl: $\textrm{pH} = 14 - pK_b + \log\frac{[B^+]}{[BOH]}$
 \end{compactitem}
 
     % this determines where your columns will be separated
@@ -87,24 +95,14 @@
 }
 % If you have extra figures or data to show
 \makeextracolumn{
-    \textbf{Kyselina}
+    \textbf{Arrheniova teorie kyseliny a zásad}
     \begin{compactitem}
-        \item Látka, která uvolňuje protony, např. HCl nebo \ce{H2SO4}
+        \item Kyselina ve vodném roztoku uvolňuje kation \ce{H+}, zásada uvolňuje anion \ce{OH-}.
     \end{compactitem}
 
-	\textbf{Zásada}
+	\textbf{Brønstedtova teorie kyseliny a zásad}
 	\begin{compactitem}
-		\item Látka, která přijímá protony, např. NaOH
-	\end{compactitem}
-
-	\textbf{Silná kyselina/zásada}
-	\begin{compactitem}
-		\item Je v roztoku zcela disociovaná
-	\end{compactitem}
-
-	\textbf{Slabá kyselina/zásada}
-	\begin{compactitem}
-		\item Je v roztoku disociovaná pouze z části
+		\item Kyselina je donorem protonu, zásada jeho akceptorem.
 	\end{compactitem}
 
 	\textbf{Jednosytná kyselina}
@@ -119,9 +117,27 @@
 		\item \ce{H2SO4 -> 2 H+ + SO$^{2-}_4$}
 	\end{compactitem}
 
+	\textbf{Silná kyselina/zásada}
+	\begin{compactitem}
+		\item Je v roztoku zcela disociovaná
+	\end{compactitem}
+
+	\textbf{Slabá kyselina/zásada}
+	\begin{compactitem}
+		\item Je v roztoku disociovaná pouze z části
+	\end{compactitem}
+
 	\textbf{Sůl}
 	\begin{compactitem}
 		\item Produkt neutralizace, např. NaCl
+	\end{compactitem}
+
+	\textbf{Disociační konstanta}
+	\begin{compactitem}
+		\item Rovnovážná konstanta disociace kyseliny (K$_a$) nebo zásady (K$_b$). Často se uvádí v logaritmovaném tvaru (pK$_a$ nebo pK$_b$).
+		\item \ce{HF <=> H+ + F-}
+		\item K$_a = \frac{[H^+][F^-]}{[HF]}$
+		\item pK$_a$ = -log K$_a$
 	\end{compactitem}
 
 	\textbf{Neutralizace}
@@ -133,9 +149,15 @@
 	\textbf{Pufr}
 	\begin{compactitem}
 		\item Roztok používaný pro stabilizaci pH, je tvořen slabou kyselinou nebo zásadou a její solí
-		\item Acetátový pufr: směs kyseliny octové a octanu sodného
-		\item Fosfátový pufr: směs dihydrogenfosforečnanu sodného a hydrogenfosforečnanu sodného
+		\item \textit{Acetátový pufr}: směs kyseliny octové a octanu sodného
+		\item \textit{Fosfátový pufr}: směs dihydrogenfosforečnanu sodného a hydrogenfosforečnanu sodného
 	\end{compactitem}
+
+	\textbf{Stupnice pH}
+
+	\vspace{5mm}
+
+	\adjincludegraphics[width=60mm]{img/PHscalenolang.png}
 }
 
 % footer
